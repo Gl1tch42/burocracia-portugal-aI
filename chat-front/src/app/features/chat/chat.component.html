@@ -1,38 +1,35 @@
 <div class="chat-container">
 
- <div class="messages">
+  <div class="messages">
 
-  <div *ngFor="let m of messages"
-       class="message"
-       [class.user]="m.role==='user'"
-       [class.ai]="m.role==='assistant'">
+    <div *ngFor="let m of messages" class="message" [class.user]="m.role==='user'" [class.assistant]="m.role==='assistant'">
 
-       {{m.content}}
+      {{m.content}}
+
+    </div>
+
+    <div *ngIf="loading" class="message assistant">
+      thinking ...
+      <!-- {{ 'chat.thinking' | translate }} -->
+    </div>
 
   </div>
 
-  <div *ngIf="loading" class="ai">
-     thinking
-   <!-- {{ 'chat.thinking' | translate }} -->
-  </div>
 
- </div>
 
- <div class="chat-input">
+<div class="chat-input">
 
-  <input
-  [(ngModel)]="question"
-  [placeholder]="'Ask something about AIMA'"/>
+  <input [(ngModel)]="question" [placeholder]="'Ask something about AIMA'" (keyup.enter)="send()" />
 
   <!-- <input
   [(ngModel)]="question"
   [placeholder]="'chat.placeholder' | translate"/> -->
 
   <button (click)="send()">
-     Send
-   <!-- {{ 'chat.send' | translate }} -->
+    Send
+    <!-- {{ 'chat.send' | translate }} -->
   </button>
 
- </div>
+</div>
 
 </div>
