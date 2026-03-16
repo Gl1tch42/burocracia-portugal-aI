@@ -1,0 +1,12 @@
+{
+  "sidebar": {
+    "aima": "AIMA Assistant",
+    "documents": "Document Analysis",
+    "taxes": "Taxes (coming soon)",
+    "family": "Family Reunification (coming soon)"
+  },
+  "chat": {
+    "placeholder": "Ask something about AIMA",
+    "send": "Send"
+  }
+}

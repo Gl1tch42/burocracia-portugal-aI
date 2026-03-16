@@ -1,0 +1,12 @@
+{
+  "sidebar": {
+    "aima": "Assistente AIMA",
+    "documents": "Análise de Documentos",
+    "taxes": "Impostos (em breve)",
+    "family": "Reagrupamento (em breve)"
+  },
+  "chat": {
+    "placeholder": "Pergunte algo sobre AIMA",
+    "send": "Enviar"
+  }
+}

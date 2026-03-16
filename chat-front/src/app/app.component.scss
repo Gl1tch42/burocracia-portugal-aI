@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    /* ativa o flexbox */
+    gap: 20px;
+    /* espaço entre sidebar e conteúdo */
+}
+
+/* Sidebar */
+
+/* Conteúdo principal */
+.content {
+    flex: 1;
+    margin-left: 270px;
+    /* espaço para a sidebar fixa */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff;
+}
