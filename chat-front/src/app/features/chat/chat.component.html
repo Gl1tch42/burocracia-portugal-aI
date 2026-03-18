@@ -1,14 +1,32 @@
 <div class="chat-container">
 
-  <div class="messages">
+  <section class="chat">
+    <div class="messages">
+      <div class="message bot">
+        Olá! Posso te ajudar com processos da AIMA 🇵🇹
+      </div>
 
-    <div *ngFor="let m of messages" class="message" [class.user]="m.role==='user'" [class.assistant]="m.role==='assistant'">
+      <div class="message user">
+        Como faço para agendar minha residência?
+      </div>
+
+      <div class="message bot">
+        Você precisa acessar o portal da AIMA e verificar disponibilidade...
+      </div>
+    </div>
+
+  </section>
+
+  <div class="messagesIA">
+
+    <div *ngFor="let m of messages" class="messagesIA" [class.user]="m.role==='user'"
+      [class.assistant]="m.role==='assistant'">
 
       {{m.content}}
 
     </div>
 
-    <div *ngIf="loading" class="message assistant">
+    <div *ngIf="loading" class="messagesIA assistant">
       thinking ...
       <!-- {{ 'chat.thinking' | translate }} -->
     </div>
@@ -17,41 +35,19 @@
 
 
 
-<div class="chat-input">
+  <div class="chat-input">
 
-  <input [(ngModel)]="question" [placeholder]="'Ask something about AIMA'" (keyup.enter)="send()" />
+    <input [(ngModel)]="question" [placeholder]="'Ask something about AIMA'" (keyup.enter)="send()" />
 
-  <!-- <input
+    <!-- <input
   [(ngModel)]="question"
   [placeholder]="'chat.placeholder' | translate"/> -->
 
-  <button (click)="send()">
-    Send
-    <!-- {{ 'chat.send' | translate }} -->
-  </button>
+    <button (click)="send()">
+      Send
+      <!-- {{ 'chat.send' | translate }} -->
+    </button>
 
-</div>
-
-</div>
-
-
-<section class="chat">
-  <div class="messages">
-    <div class="message bot">
-      Olá! Posso te ajudar com processos da AIMA 🇵🇹
-    </div>
-
-    <div class="message user">
-      Como faço para agendar minha residência?
-    </div>
-
-    <div class="message bot">
-      Você precisa acessar o portal da AIMA e verificar disponibilidade...
-    </div>
   </div>
 
-  <div class="chat-input">
-    <input placeholder="Pergunte sobre AIMA..." />
-    <button>Enviar</button>
-  </div>
-</section>
+</div>

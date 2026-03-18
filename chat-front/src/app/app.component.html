@@ -4,16 +4,14 @@
     <div class="logo">🇵🇹 Burocracia AI</div>
 
     <nav>
-      <a class="nav-item active" routerLink="/aima">Chat AIMA</a>
-      <a class="nav-item" routerLink="/financas">Chat Finanças</a>
-      <a class="nav-item" routerLink="/documents">Documentos</a>
+      <a class="nav-item" routerLink="/aima" [class.active]="isActive('/aima')">Chat AIMA</a>
+      <a class="nav-item" routerLink="/financas" [class.active]="isActive('/financas')">Chat Finanças</a>
+      <a class="nav-item" routerLink="/documents" [class.active]="isActive('/documents')">Documentos</a>
     </nav>
   </aside>
 
   <main class="content">
     <header class="header">
-      <input class="search" placeholder="Pergunte algo..." />
-      <div class="user">Michel</div>
     </header>
 
     <!-- Aqui entra o router -->

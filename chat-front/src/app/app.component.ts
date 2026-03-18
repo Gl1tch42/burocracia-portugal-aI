@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,18 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'chat-front';
+  currentRoute: string = '';
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        console.log('NavigationEnd event:', event);
+        this.currentRoute = event.urlAfterRedirects;
+      });
+  }
+
+  isActive(route: string): boolean {
+    return this.currentRoute === route;
+  }
 }
