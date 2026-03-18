@@ -1,15 +1,23 @@
-<div style="display: flex;gap: 20px;">
+<!-- ================= LAYOUT (layout.component.html) ================= -->
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">🇵🇹 Burocracia AI</div>
 
-  <!-- <div style="width:260px;
-    background:#0f0f0f;
-    height:100vh;
-    justify-content:space-between;">
-  </div> -->
-  <app-sidebar></app-sidebar>
+    <nav>
+      <a class="nav-item active" routerLink="/aima">Chat AIMA</a>
+      <a class="nav-item" routerLink="/financas">Chat Finanças</a>
+      <a class="nav-item" routerLink="/documents">Documentos</a>
+    </nav>
+  </aside>
 
-  <!-- Conteúdo dinâmico -->
   <main class="content">
+    <header class="header">
+      <input class="search" placeholder="Pergunte algo..." />
+      <div class="user">Michel</div>
+    </header>
+
+    <!-- Aqui entra o router -->
     <router-outlet></router-outlet>
   </main>
-
 </div>
+
