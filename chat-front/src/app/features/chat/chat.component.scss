@@ -18,18 +18,21 @@ body{
     margin-bottom: 15px;
     padding: 10px 15px;
     border-radius: 10px;
-    max-width: 70%;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
   }
 
   .messagesIA.user {
     align-self:flex-end;
     background:#2a7f62;
+    max-width: 70%;
     color:white;
   }
 
   .messagesIA.assistant {
     background:#1e1e1e;
     color:#ddd;
+    max-width: 70%;
     align-self: flex-start;
   }
